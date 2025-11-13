@@ -1,4 +1,4 @@
-name: Build and Push QingLong Docker Image
+name: Build and Push Docker Image
 
 on:
   push:
@@ -44,10 +44,10 @@ jobs:
           context: ./QingLong
           push: true
           tags: |
-            ghcr.io/${{ steps.lower-repo.outputs.repository }}/qinglong:latest
+            ghcr.io/${{ steps.lower-repo.outputs.repository }}/mytool:latest
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
-            org.opencontainers.image.description=QingLong Docker Image
+            org.opencontainers.image.description=General application image
             org.opencontainers.image.licenses=MIT
           cache-from: type=gha
           cache-to: type=gha,mode=max
